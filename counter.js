@@ -86,3 +86,4 @@ const store = createStore(counterReducer);
     store.dispatch(incrementCounter())
     store.dispatch(incrementCounter())
     store.dispatch(incrementCounter())
+    store.dispatch(incrementByValue(10))
