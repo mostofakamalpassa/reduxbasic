@@ -15,6 +15,7 @@ const counterInitial ={
 const INCREMENT = 'INCREMENT'
 const DECREMENT = 'DECREMENT'
 const RESET = 'RESET'
+const INCREMENT_BY_VALUE = 'INCREMENT_BY_VALUE'
 const incrementCounter = () =>{
     return {
         type: INCREMENT
@@ -29,6 +30,13 @@ const decrementCounter = () =>{
 const resetCounter = () =>{
     return {
         type: RESET
+    }
+}
+
+const incrementByValue = (value) =>{
+    return{
+        type:INCREMENT_BY_VALUE,
+        payload: value
     }
 }
 
@@ -51,6 +59,11 @@ const counterReducer = (state = counterInitial, action) =>{
                 return{
                     ...state,
                     count: 0
+                }
+            case INCREMENT_BY_VALUE:
+                return{
+                    ...state,
+                    count: state.count + action.payload
                 }
             default:
                 return state;
