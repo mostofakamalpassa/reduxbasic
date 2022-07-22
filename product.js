@@ -96,7 +96,7 @@ const cartReducer = (state = initalizeCartItem, action) =>{
 
         case GET_CART_ITEM:
             return{
-                state
+                ...state
             }
 
         case SET_CART_ITEM:
@@ -122,7 +122,7 @@ const store = createStore(rootReducer);
 store.subscribe(()=>{
     console.log(store.getState())
 })
-// store.dispatch(productReducer('potato'))
+ store.dispatch(setProduct('potato'))
 store.dispatch(setCartItem('potato'))
 store.dispatch(setCartItem('lemon'));
 store.dispatch(getCartItem())
